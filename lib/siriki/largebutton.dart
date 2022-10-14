@@ -7,6 +7,10 @@ class largebutton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData queryData;
+    queryData = MediaQuery.of(context);
+    var largeur = queryData.size.width;
+    var hauteur = queryData.size.height;
     return Container(
       width: double.infinity,
       child: ElevatedButton(
@@ -29,6 +33,10 @@ class transbutton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData queryData;
+    queryData = MediaQuery.of(context);
+    var largeur = queryData.size.width;
+    var hauteur = queryData.size.height;
     return Container(
       width: double.infinity,
       child: OutlinedButton(
@@ -47,7 +55,7 @@ class transbutton extends StatelessWidget {
               ),
             ),
             Container(
-              width: 300,
+              width: largeur * 0.75,
               // margin: EdgeInsets.only(left: 100),
               child: Text(
                 text,

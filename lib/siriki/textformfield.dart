@@ -21,7 +21,7 @@ class textfield extends StatelessWidget {
           labelStyle: TextStyle(color: Colors.black45),
           border: const OutlineInputBorder(),
           focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(width: 1, color: Colors.black45))),
+              borderSide: BorderSide(width: 1.5, color: Colors.black45))),
       obscureText: textvisible ? true : false,
     );
   }

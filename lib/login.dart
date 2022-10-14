@@ -15,101 +15,120 @@ class _MyHomePageState extends State<MyHomePage> {
   bool check = false;
   @override
   Widget build(BuildContext context) {
+    MediaQueryData queryData;
+    queryData = MediaQuery.of(context);
+    var largeur = queryData.size.width;
+    var hauteur = queryData.size.height;
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
-        body: Stack(
-      children: [
-        Container(
-          decoration: BoxDecoration(color: Colors.grey.shade200),
-          padding:
-              const EdgeInsets.only(bottom: 10, left: 15, right: 15, top: 100),
-          child: Column(
-            children: [
-              const Center(
-                child: Text(
-                  "Login",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        body: SingleChildScrollView(
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(color: Colors.grey.shade200),
+            padding: EdgeInsets.only(
+                bottom: 10,
+                left: largeur * 0.04,
+                right: largeur * 0.04,
+                top: hauteur * 0.12),
+            child: Column(
+              children: [
+                const Center(
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Color(0xff333333),
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 45,
-              ),
-              Container(
-                height: 45,
-                child: textfield(
-                  label: "Email*",
-                  textvisible: false,
+                SizedBox(
+                  height: hauteur * 0.05,
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                height: 45,
-                child: textfield(
-                  label: "Password*",
-                  textvisible: true,
+                Container(
+                  height: hauteur * 0.06,
+                  child: textfield(
+                    label: "Email*",
+                    textvisible: false,
+                  ),
                 ),
-              ),
-              Container(
-                child: Row(
+                SizedBox(
+                  height: hauteur * 0.04,
+                ),
+                Container(
+                  height: hauteur * 0.06,
+                  child: textfield(
+                    label: "Password*",
+                    textvisible: true,
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Checkbox(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6)),
+                        checkColor: Colors.black45,
+                        activeColor: Colors.transparent,
+                        autofocus: true,
+                        value: check,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            check = value!;
+                          });
+                        },
+                      ),
+                      const Text(
+                        'Remember me',
+                        style: TextStyle(color: Colors.black45),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: hauteur * 0.009,
+                ),
+                largebutton(text: 'LOGIN'),
+                SizedBox(
+                  height: hauteur * 0.006,
+                ),
+                Text(
+                  "OR continue with",
+                  style: TextStyle(fontSize: 17, color: Colors.black45),
+                ),
+                SizedBox(
+                  height: hauteur * 0.006,
+                ),
+                transbutton(image: 'assets/images/google.png', text: 'Google'),
+                transbutton(
+                    image: 'assets/images/facebook.png', text: 'Facebook'),
+                SizedBox(
+                  height: hauteur * 0.28,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Checkbox(
-                      activeColor: const Color.fromARGB(255, 68, 218, 255),
-                      value: check,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          check = value!;
-                        });
-                      },
+                    const Text(
+                      "Don't have Account?",
+                      style: TextStyle(fontSize: 15, color: Colors.black45),
                     ),
-                    const Text('Remember me'),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const signup(),
+                              ));
+                        },
+                        child: const Text("Signup"))
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              largebutton(text: 'LOGIN'),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                "OR continue with",
-                style: TextStyle(fontSize: 18, color: Colors.black45),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              transbutton(image: 'assets/images/google.png', text: 'Google'),
-              transbutton(
-                  image: 'assets/images/facebook.png', text: 'Facebook'),
-              SizedBox(
-                height: 190,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Don't have Account?",
-                    style: TextStyle(fontSize: 15, color: Colors.black45),
-                  ),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const signup(),
-                            ));
-                      },
-                      child: const Text("Signup"))
-                ],
-              ),
-            ],
-          ),
-        )
-      ],
+              ],
+            ),
+          )
+        ],
+      ),
     ));
   }
 }
