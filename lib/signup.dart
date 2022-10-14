@@ -82,18 +82,18 @@ class _signupState extends State<signup> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 largebutton(text: 'LOGIN'),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
-                Text(
+                const Text(
                   "OR continue with",
                   style: TextStyle(fontSize: 18, color: Colors.black45),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 transbutton(image: 'assets/images/google.png', text: 'Google'),
