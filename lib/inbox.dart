@@ -48,6 +48,7 @@ class _onzekState extends State<onzek> {
      
       ),
   ].reversed.toList();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,85 +81,114 @@ class _onzekState extends State<onzek> {
               )
             ],
           )
-
       ),
       body: Column(
         children: [
-          Expanded(child: GroupedListView(
-            padding: EdgeInsets.all(10),
-            elements: messages,
-            groupBy: (message) => DateTime(
-              message.data.year,
-              message.data.month,
-              message.data.day,
-            ),
-            groupHeaderBuilder: (Message message) => SizedBox(
-              height: 40,
-              child: Center(
-                child: Card(
-                  color: Color(0xff41CDFB),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Text(
-                      DateFormat.yMMMd().format(message.data),
+          Expanded(
+            child: Column(
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width * 0.80,
                     ),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Color(0xffe6f9ff),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                ),
-              ),
-            ),
-            itemBuilder: (context, Message message) =>  Align(
-              alignment: message.textme
-                  ? Alignment.centerRight
-                  : Alignment.centerLeft,
-              child: Card(
-                  elevation: 8,
-                  child: Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Text(message.text),
+                    child: Text('hey marczer'),
                     ),
                   ),
-              
-            ),
-             )
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 8),
-            height: 78,
-            color: Colors.grey,
-            child: Row(
-              children: [
-                IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.photo),
-                iconSize: 25,
+                Row(
+                  children: [
+                    Container(
+                      child: Text("10.00 PM",style: TextStyle(fontSize: 12),),
+                      ),
+                  ],
                 ),
-                TextField(
-                decoration: const InputDecoration(
-                hintText: 'entrer le message'
-                 ),
-                onSubmitted: (text) {
-                final message = Message(
-                  text: text,
-                  data: DateTime.now(),
-                  textme: true,
-                );
-                setState(() {
-                  messages.add(message);
-                }
-                );
-              }
-            ),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.send),
-                iconSize: 25,
+
+                Container(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width * 0.80,
+                    ),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Color(0xff41CDFB),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text('hey marc'),
+                    ),
+                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      child: Text("10.00 PM",style: TextStyle(fontSize: 12),),
+                      ),
+                  ],
+                ),
+
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width * 0.80,
+                    ),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Color(0xffe6f9ff),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text('oui ndkw tu a fini de manger '),
+                    ),
+                  ),
+                Row(
+
+                  children: [
+                    Container(
+                      child: Text("10.00 PM",style: TextStyle(fontSize: 12),),
+                      ),
+                  ],
                 ),
               ],
             ),
-           
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            height: 70,
+            color: Colors.white,
+            child: Row(
+              children: [
+                IconButton(
+                  icon: Icon(Icons.photo),
+                  iconSize: 25,
+                  onPressed: () {},
+                ),
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration.collapsed(
+                      hintText: "commencer a ecrit"
+                      ),
+                      textCapitalization: TextCapitalization.sentences,
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.send),
+                  iconSize: 25,
+                  onPressed: () {},
+                ),
+              ]
+            )
             
-          )
-        ],
+            )
+            ]
       ),
     );
   }
