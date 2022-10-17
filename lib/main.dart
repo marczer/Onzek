@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'PageAcceuil.dart';
 
 void main() {
@@ -15,10 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Onzek',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Onzek'),
+      home: MyHomePage(title: 'Onzek'),
     );
   }
 }
