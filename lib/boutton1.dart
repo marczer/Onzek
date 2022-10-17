@@ -10,7 +10,7 @@ class boutton1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 150,
+        width: 100,
         height: 50,
         child: ElevatedButton(
           onPressed: onPressed,
