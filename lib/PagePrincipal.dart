@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
         color: Color(0xfff9f9f9),
         child: Column(
           children: [
-            avata(image: "assets/lezer.jpeg", nom: 'Viera', prenom: 'Marc Oula'),
+            avata(image: "assets/image/lezer.jpeg", nom: 'Viera', prenom: 'Marc Oula'),
             // Container(
             //   height: 10,
             // ),
@@ -58,38 +58,38 @@ class _MyHomePageState extends State<MyHomePage> {
                              child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                connectavata(image: 'assets/lezer.jpeg',),
-                                connectavata(image: 'assets/Format.png',),
-                                connectavata(image: 'assets/ecole.png',),
-                                connectavata(image: 'assets/image1.png',),
-                                connectavata(image: 'assets/image2.jpg',),
-                                connectavata(image: 'assets/lezer.jpeg',),
+                                connectavata(image: 'assets/image/lezer.jpeg',),
+                                connectavata(image: 'assets/image/Format.png',),
+                                connectavata(image: 'assets/image/ecole.png',),
+                                connectavata(image: 'assets/image/image1.png',),
+                                connectavata(image: 'assets/image/image2.jpg',),
+                                connectavata(image: 'assets/image/lezer.jpeg',),
                               ],
                              ),
                            ),
                           const personcompte(
-                              image: "assets/lezer.jpeg",
+                              image: "assets/image/lezer.jpeg",
                               username: 'Oula Marc Viera',
                               lastmes: 'Hello Words',
                               year: "10.00 PM",
                               numbermes: '1'
                               ),
                            const personcompte(
-                              image: "assets/lezer.jpeg",
+                              image: "assets/image/lezer.jpeg",
                               username: 'Oula Marc Viera',
                               lastmes: 'Hello Words',
                               year: "10.00 PM",
                               numbermes: '1'
                               ),
                            const personcompte(
-                              image: "assets/lezer.jpeg",
+                              image: "assets/image/lezer.jpeg",
                               username: 'Oula Marc Viera',
                               lastmes: 'Hello Words',
                               year: "10.00 PM",
                               numbermes: '1'
                               ),
                            const personcompte(
-                              image: "assets/lezer.jpeg",
+                              image: "assets/image/lezer.jpeg",
                               username: 'Oula Marc Viera',
                               lastmes: 'Hello Words',
                               year: "10.00 PM",
@@ -108,12 +108,12 @@ class _MyHomePageState extends State<MyHomePage> {
                              child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                connectavata(image: 'assets/lezer.jpeg',),
-                                connectavata(image: 'assets/Format.png',),
-                                connectavata(image: 'assets/ecole.png',),
-                                connectavata(image: 'assets/image1.png',),
-                                connectavata(image: 'assets/image2.jpg',),
-                                connectavata(image: 'assets/lezer.jpeg',),
+                                connectavata(image: 'assets/image/lezer.jpeg',),
+                                connectavata(image: 'assets/image/Format.png',),
+                                connectavata(image: 'assets/image/ecole.png',),
+                                connectavata(image: 'assets/image/image1.png',),
+                                connectavata(image: 'assets/image/image2.jpg',),
+                                connectavata(image: 'assets/image/lezer.jpeg',),
                               ],
                              ),
                            ),
@@ -123,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: ListTile(
                                   leading:  CircleAvatar(
                                   radius: 30,
-                                  backgroundImage: AssetImage('assets/Format.png'),
+                                  backgroundImage: AssetImage('assets/image/Format.png'),
                                      ),
                                   title: Text('zer oula'),
                                   subtitle: Text('appel manquer',style: TextStyle(color: Colors.red),),
@@ -155,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: ListTile(
                                   leading:  CircleAvatar(
                                   radius: 30,
-                                  backgroundImage: AssetImage('assets/Format.png'),
+                                  backgroundImage: AssetImage('assets/image/Format.png'),
                                      ),
                                   title: Text('zer oula'),
                                   subtitle: Text('appel recu',style: TextStyle(color: Colors.blue),),

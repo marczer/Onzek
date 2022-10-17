@@ -34,8 +34,6 @@ class _onzekState extends State<onzek> {
       text: 'hey marczer',
       data: DateTime.now().subtract(Duration(minutes: 1)),
       textme: false,
-      
-      
       ),
     Message(
       text: 'hey marc',
@@ -69,7 +67,7 @@ class _onzekState extends State<onzek> {
               Container(
                 child: const CircleAvatar(
                           radius: 30,
-                          backgroundImage: AssetImage("assets/lezer.jpeg"),
+                          backgroundImage: AssetImage("assets/image/lezer.jpeg"),
                   ),
             
               ),
@@ -80,9 +78,6 @@ class _onzekState extends State<onzek> {
                   Text('en ligne',style: TextStyle( color: Colors.black ),)
                 ],
               )
-              // Container(
-              //     padding: const EdgeInsets.all(8.0), child: Text('YourAppTitle'))
-
             ],
           )
 
@@ -127,12 +122,21 @@ class _onzekState extends State<onzek> {
              )
           ),
           Container(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            height: 78,
             color: Colors.grey,
-            child:  TextField(
-              decoration: const InputDecoration(
+            child: Row(
+              children: [
+                IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.photo),
+                iconSize: 25,
+                ),
+                TextField(
+                decoration: const InputDecoration(
                 hintText: 'entrer le message'
-              ),
-              onSubmitted: (text) {
+                 ),
+                onSubmitted: (text) {
                 final message = Message(
                   text: text,
                   data: DateTime.now(),
@@ -140,9 +144,18 @@ class _onzekState extends State<onzek> {
                 );
                 setState(() {
                   messages.add(message);
-                });
+                }
+                );
               }
             ),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.send),
+                iconSize: 25,
+                ),
+              ],
+            ),
+           
             
           )
         ],
