@@ -67,7 +67,7 @@ class _onzekState extends State<onzek> {
               Container(
                 child: const CircleAvatar(
                           radius: 30,
-                          backgroundImage: AssetImage("assets/image/lezer.jpeg"),
+                          backgroundImage: AssetImage("assets/images/lezer.jpeg"),
                   ),
             
               ),
