@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'PagePrincipal.dart';
+import 'inbox.dart';
 
 void main() {
   runApp(const MyApp());
