@@ -49,7 +49,7 @@ class transbutton extends StatelessWidget {
         child: Row(
           children: [
             Image(
-              height: 20,
+              height: 22,
               image: AssetImage(
                 image,
               ),
