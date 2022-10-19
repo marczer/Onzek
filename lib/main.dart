@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onzek/Compte.dart';
 
 import 'Profile.dart';
 
@@ -12,13 +13,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp( debugShowCheckedModeBanner: false,
       title: 'Onzek',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
       ),
-      home: MyProfilePage(title: 'Onzek'),
+      home: MonCompte(),
     );
   }
 }

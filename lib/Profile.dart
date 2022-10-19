@@ -11,7 +11,8 @@ class MyProfilePage extends StatefulWidget {
 
 class _MyProfilePageState extends State<MyProfilePage> {
 
-bool? value;
+bool interrupteur_noth=false;
+bool interrupteur_theme=false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +40,7 @@ bool? value;
                       Image.asset('assets/CI.png',),
 
                       CircleAvatar(
+                        
                         radius: 15,
                         child: 
                       Image.asset('assets/ArmCI.jpg', width: 100, height: 100, )
@@ -110,8 +112,8 @@ bool? value;
               title: Text('App Notification'),
               
               tileColor: Color.fromARGB(255, 231, 249, 250),
-              trailing: Switch.adaptive(value:true, onChanged: (value) => setState(() {
-               this.value=value; }) ,
+              trailing: Switch.adaptive(value:interrupteur_noth, onChanged: (bool a) => setState(() {
+               interrupteur_noth=a; }) ,
             
             ),
             ),
@@ -125,8 +127,8 @@ bool? value;
               title: Text('Dark Theme'),
               
               tileColor: Color.fromARGB(255, 231, 249, 250),
-              trailing: Switch.adaptive(value: false, onChanged: (value) => setState(() {
-               this.value=value; }) ,
+              trailing: Switch.adaptive(value: interrupteur_theme, onChanged: (bool b) => setState(() {
+               interrupteur_theme=b; }) ,
             
             ),
             ),
@@ -135,7 +137,8 @@ bool? value;
 
             ElevatedButton(onPressed:() {
               
-            }, child: Text('Log Out'))
+            }, child: Text('Log Out')),
+
 
 
           ],
